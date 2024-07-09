@@ -1,7 +1,7 @@
 #pragma once
 class __declspec(dllexport) Wnd
 {
-private:
+protected:
 	HWND			_hwnd;
 	HINSTANCE		_hInstance;
 	wchar_t			_className[30];
@@ -12,11 +12,12 @@ private:
 	int				_height;
 public:
 	Wnd(HINSTANCE hInstance, const wchar_t* className, const wchar_t* titleName, int spawnX, int spawnY, int width, int height);
-	~Wnd();
+	virtual ~Wnd();
 
 	bool Init();
 	int GetMessageDispatch();
 	virtual LRESULT MessageProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) abstract;
 	static LRESULT  WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
+	HWND GetHWND() { return _hwnd; }
 };
 

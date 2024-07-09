@@ -2,7 +2,7 @@
 #include "Wnd.h"
 
 Wnd::Wnd(HINSTANCE hInstance, const wchar_t* className, const wchar_t* titleName, int spawnX, int spawnY, int width, int height)
-    : _hInstance(hInstance), _spawnX(spawnX), _spawnY(spawnY), _width(width), _height(height)
+    : _hInstance(hInstance), _spawnX(spawnX), _spawnY(spawnY), _width(width), _height(height), _hwnd(0)
 {
     ::memcpy(_className, className, sizeof(wchar_t) * wcslen(className));
     ::memcpy(_titleName, titleName, sizeof(wchar_t) * wcslen(titleName));
