@@ -11,11 +11,12 @@ private:
 	int				_width;
 	int				_height;
 public:
-	Wnd(HINSTANCE hInstance, const wchar_t className, const wchar_t titleName, int spawnX, int spawnY, int width, int height);
+	Wnd(HINSTANCE hInstance, const wchar_t* className, const wchar_t* titleName, int spawnX, int spawnY, int width, int height);
 	~Wnd();
 
 	bool Init();
-	int  GetMessageDispatch();
+	int GetMessageDispatch();
 	virtual LRESULT MessageProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) abstract;
+	static LRESULT  WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 };
 
