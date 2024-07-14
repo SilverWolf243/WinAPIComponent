@@ -29,6 +29,10 @@ bool FileUtils::OpenFile(HWND hWnd, wchar_t* filePath)
             swprintf_s(errorMessage, 256, L"GetOpenFileName failed with error code: %lu", error);
             MessageBox(hWnd, errorMessage, L"Error", MB_OK | MB_ICONERROR);
         }
+        else
+        {
+            return false;
+        }
     }
 
     assert(1 == 0, "OpenFileError");
