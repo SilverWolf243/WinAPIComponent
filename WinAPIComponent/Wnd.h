@@ -14,7 +14,7 @@ public:
 	Wnd(HINSTANCE hInstance, const wchar_t* className, const wchar_t* titleName, int spawnX, int spawnY, int width, int height);
 	virtual ~Wnd();
 
-	bool Init();
+	virtual bool Init();
 	int GetMessageDispatch();
 	virtual LRESULT MessageProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) abstract;
 	static LRESULT  WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);

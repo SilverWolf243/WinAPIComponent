@@ -151,11 +151,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ChildrenWnd.h" />
     <ClInclude Include="FileUtils.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Wnd.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ChildrenWnd.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="FileUtils.cpp" />
     <ClCompile Include="pch.cpp">
