@@ -1,23 +1,15 @@
 #pragma once
-class __declspec(dllexport) Wnd
+#include "WndFrame.h"
+class __declspec(dllexport) Wnd : public WndFrame
 {
 protected:
-	HWND			_hwnd;
-	HINSTANCE		_hInstance;
-	wchar_t			_className[30];
-	wchar_t			_titleName[30];
-	int				_spawnX;
-	int				_spawnY;
-	int				_width;
-	int				_height;
+	HWND _frameWnd;
+
 public:
-	Wnd(HINSTANCE hInstance, const wchar_t* className, const wchar_t* titleName, int spawnX, int spawnY, int width, int height);
+	Wnd(HINSTANCE hInstance, const wchar_t* className, const wchar_t* titleName, int spawnX, int spawnY, int width, int height, HWND frameWnd);
 	virtual ~Wnd();
 
 	virtual bool Init();
-	int GetMessageDispatch();
 	virtual LRESULT MessageProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) abstract;
-	static LRESULT  WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
-	HWND GetHWND() { return _hwnd; }
 };
 
